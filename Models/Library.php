@@ -72,7 +72,7 @@ class Library {
 
 	public static function searchByTitle($title){ 
 		$db = Db::getConnect();
-		$select = $db->prepare('SELECT * FROM books WHERE UPPER(title) LIKE UPPER(:title)');
+		$select = $db->prepare('SELECT books.*, authors.name, authors.surname FROM books INNER JOIN authors ON books.id_author = authors.id_author WHERE UPPER(title) LIKE UPPER(:title)');
 		
 		$title = "%$title%";
 		$title = strtoupper($title);

@@ -15,7 +15,7 @@
         <?php foreach ($books as $book) { ?>
             <div class="bg-cyan-600 text-white text-center p-6 w-56 h-96 flex justify-between items-center flex-col gap-4 outline outline-offset-2 outline-2 outline-teal-500">
                 <h2 class="text-2xl font-bold"><?= $book['title']; ?></h2>
-                <h3 class="text-lg font-bold"><?= $book['name']; ?> <?= $book['surname']; ?></h3>
+                <h3 class="text-lg font-bold"><?= isset($book['name']) ? $book['name'] : '' ?> <?= isset($book['surname']) ? $book['surname'] : '' ?></h3>
                 <hr class="w-full divide-white">
                 <h4 class="text-base">Categoría: <?= $book['category']; ?></h4>
                 <h4 class="text-base">Publicación: <?= $book['publish_date']; ?></h4>

@@ -87,6 +87,7 @@ class LibraryController {
 			$title = $_POST['title'];
 			$books = Library::searchByTitle($title); 
 			require_once('Views/Library/showBooks.php');
+			
 		} else {
 			$books = Library::getBooks(); 
 			require_once('Views/Library/showBooks.php');
